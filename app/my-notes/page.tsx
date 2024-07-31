@@ -1,6 +1,12 @@
+import Sidebar from "./Components/Sidebar/Sidebar";
+import ContentArea from "./Components/ContentArea/ContentArea";
+
 const MyNotes = () =>{
     return (
-        <div>Welcome</div>
+        <div className="flex">
+            <Sidebar />
+            <ContentArea />
+        </div>
     );
 }
 
