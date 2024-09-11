@@ -1,34 +1,38 @@
 "use client";
 import { useGlobalContext } from "@/ContextApi";
 
-function ThemeMode(){
+function ThemeMode() {
     const {
-        themeModeObject:{themeMode, setThemeMode}
+        themeModeObject: { themeMode, setThemeMode }
     } = useGlobalContext();
-    console.log(themeMode)
-    const activeButton = "flex cursor-pointer select-none gap-1 items-center bg-purple-600 text-white py-2 p-[7x] px-2 rounded-md w-[60%]"
-    const inActiveButton = "flex cursor-pointer select-none gap-1 items-center hover:bg-purple-600 hover:text-white py-2 p-[7x] px-2 rounded-md w-[60%]"
-
-    function clickedMenu(index: number){
-        const updatedTheme = themeMode.map((menu,i)=>{
-            if(i==index){
-                return {...menu, isSelected:true};
-            }else{
-                return {...menu, isSelected:false};
+    function clickedMenu(index: number) {
+        const updatedTheme = themeMode.map((menu, i) => {
+            if (i === index) {
+                return { ...menu, isSelected: true };
+            } else {
+                return { ...menu, isSelected: false };
             }
-        })
-        setThemeMode(updatedTheme)
+        });
+        setThemeMode(updatedTheme);
     }
-    return(
-        <div className="flex  bg-slate-100 rounded-3xl">
-            {themeMode.map((mode,index)=>{
-                <div >
 
-                </div>
-            })}
-            
-        </div>ṭ
-    )
+    return (
+        <>
+            <div className="flex bg-slate-100 rounded-3xl mr-5">
+                {themeMode.map((mode, index) => {
+                    return (
+                        <div
+                            key={mode.id}
+                            className={`flex cursor-pointer select-none gap-1 items-center ${mode.isSelected?'bg-purple-600 text-white':'text-black'} ${mode.mode=='light'?`rounded-full`:`rounded-full`} m-1  p-2 w-[60%]`}
+                            onClick={() => clickedMenu(index)}
+                        >
+                            {mode.icons}
+                        </div>
+                    );
+                })}
+            </div>
+        </>
+    );
 }
 
 export default ThemeMode;

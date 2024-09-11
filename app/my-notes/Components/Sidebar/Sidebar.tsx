@@ -3,8 +3,12 @@ import React, { useState } from 'react';
 import { SiCplusplus, SiJavascript, SiPython, SiSquare } from '@icons-pack/react-simple-icons';
 import { useGlobalContext } from '@/ContextApi';
 export default function Sidebar(){
+    const {
+        themeModeObject:{themeMode},
+        openSideBarObject:{openSideBar}
+    } = useGlobalContext();
     return (
-        <div className="w-[20%] h-screen flex flex-col pt-7 border-r p-5">
+        <div className={`${openSideBar?'max-md:block z-50 fixed shadow-lg':'max-md:hidden'} pr-10 w-[50%] h-screen flex flex-col pt-7  p-5 ${!themeMode[1].isSelected?'bg-white':'bg-slate-800'}`}>
             <Logo />
             <QuickLinks />
             <Languages />
@@ -14,7 +18,7 @@ export default function Sidebar(){
 
 function Logo(){
     return(
-      <div className="h-[50px] w-[100px] bg-[#8338ec] items-center"></div>
+      <div className="h-[50px] w-[90%] bg-[#8338ec] items-center"></div>
     )
 }
 
