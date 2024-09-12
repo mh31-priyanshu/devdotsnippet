@@ -67,13 +67,13 @@ export default function GlobalContextProvider({ children }: { children: React.Re
             id: 1,
             mode: "light",
             icons: <LightMode sx={{ fontSize: 18 }} />,
-            isSelected: true
+            isSelected: false
         },
         {
             id: 2,
             mode: "dark",
             icons: <DarkMode sx={{ fontSize: 18 }} />,
-            isSelected: false
+            isSelected: true
         }
     ]);
 

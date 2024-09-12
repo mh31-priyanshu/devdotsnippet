@@ -5,6 +5,7 @@ import SearchBar from "./TopBar/SearchBar";
 import DarkMode from "./TopBar/ThemeMode";
 import SideBarMenuObject from "./TopBar/SideBarMenuObject";
 import SwipeTagSelector from "./NotesArea/SwipeTagSelector";
+import AllNotesArea from "./NotesArea/AllNotesArea";
 const ContentArea = () =>{
     const {
         themeModeObject:{themeMode}
@@ -13,6 +14,7 @@ const ContentArea = () =>{
         <div className={`w-[100%] ${themeMode[1].isSelected?'bg-slate-700':'bg-slate-100'} p-5`}>
             <TopBar />
             <NotesArea />
+            <AllNotesArea />
         </div>
     )
 }

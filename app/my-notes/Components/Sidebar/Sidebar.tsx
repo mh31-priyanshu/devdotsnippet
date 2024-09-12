@@ -8,7 +8,7 @@ export default function Sidebar(){
         openSideBarObject:{openSideBar}
     } = useGlobalContext();
     return (
-        <div className={`${openSideBar?'max-md:block z-50 fixed shadow-lg':'max-md:hidden'} pr-10 w-[50%] h-screen flex flex-col pt-7  p-5 ${!themeMode[1].isSelected?'bg-white':'bg-slate-800'}`}>
+        <div className={`${openSideBar?'max-md:block z-50 fixed shadow-lg':'max-md:hidden'}  w-[60%] h-screen flex flex-col pt-7  p-5 ${!themeMode[1].isSelected?'bg-white':'bg-slate-800'}`}>
             <Logo />
             <QuickLinks />
             <Languages />
